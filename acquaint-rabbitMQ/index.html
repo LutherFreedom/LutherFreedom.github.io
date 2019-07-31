@@ -2,22 +2,24 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>标签: 诗 - 生知涯</title>
+<title>初识RabbitMQ（一） - 生知涯</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="Coding Coding">
-<meta property="og:type" content="website">
-<meta property="og:title" content="生知涯">
-<meta property="og:url" content="http://yoursite.com/tags/诗/index.html">
+    <meta name="description" content="之前一直听别人说Rabbit、Kafka、Rocket这几类的MQ, 加之前段时间在项目中用到了RabbitMQ, 用的过程中对其中的概念并不是很清楚，所以想去了解学习一下。">
+<meta name="keywords" content="MQ,rabbitMQ,AMQP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识RabbitMQ（一）">
+<meta property="og:url" content="http://yoursite.com/acquaint-rabbitMQ/index.html">
 <meta property="og:site_name" content="生知涯">
-<meta property="og:description" content="Coding Coding">
+<meta property="og:description" content="之前一直听别人说Rabbit、Kafka、Rocket这几类的MQ, 加之前段时间在项目中用到了RabbitMQ, 用的过程中对其中的概念并不是很清楚，所以想去了解学习一下。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-07-31T08:56:03.546Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="生知涯">
-<meta name="twitter:description" content="Coding Coding">
+<meta name="twitter:title" content="初识RabbitMQ（一）">
+<meta name="twitter:description" content="之前一直听别人说Rabbit、Kafka、Rocket这几类的MQ, 加之前段时间在项目中用到了RabbitMQ, 用的过程中对其中的概念并不是很清楚，所以想去了解学习一下。">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -92,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-              <!--  <img src="/博客#/images/logo.svg" alt="生知涯" height="28"> -->
+              <!--  <img src="/博客#/images/logo.svg" alt="初识RabbitMQ（一）" height="28"> -->
 		Luther
             
             </a>
@@ -140,23 +142,16 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">诗</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-31T08:50:17.000Z">2019-07-31</time>
+                <time class="level-item has-text-grey" datetime="2019-07-26T03:28:18.000Z">2019-07-26</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/MQ/">MQ</a>
+                </div>
                 
                 
                 
@@ -165,21 +160,28 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/chineseTeen/">少年中国说</a>
+                初识RabbitMQ（一）
             
         </h1>
         <div class="content">
-            <p>日本人之称我中国也，一则曰老大帝国，再则曰老大帝国。是语也，盖袭译欧西人之言也。呜呼！我中国其果老大矣乎？梁启超曰：恶！是何言！是何言！吾心目中有一少年中国在！</p>
+            <p>之前一直听别人说<code>Rabbit</code>、<code>Kafka</code>、<code>Rocket</code>这几类的MQ, 加之前段时间在项目中用到了<code>RabbitMQ</code>, 用的过程中对其中的概念并不是<br>很清楚，所以想去了解学习一下。</p>
+<a id="more"></a>
+
+<h2 id="AMQP协议"><a href="#AMQP协议" class="headerlink" title="AMQP协议"></a>AMQP协议</h2><blockquote>
+<p>RabbitMQ是遵从AMQP协议的</p>
+</blockquote>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/chineseTeen/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/AMQP/">AMQP</a>, <a class="has-link-grey -link" href="/tags/MQ/">MQ</a>, <a class="has-link-grey -link" href="/tags/rabbitMQ/">rabbitMQ</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -189,7 +191,19 @@
 
 
 
-
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/chineseTeen/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">少年中国说</span>
+            </a>
+        </div>
+        
+        
+    </div>
+</div>
 
 
 </div>
@@ -475,7 +489,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                   <!-- <img src="/博客#/images/logo.svg" alt="生知涯" height="28"> -->
+                   <!-- <img src="/博客#/images/logo.svg" alt="初识RabbitMQ（一）" height="28"> -->
 			Luther
                 
                 </a>
