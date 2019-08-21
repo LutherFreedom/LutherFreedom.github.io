@@ -2,22 +2,24 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>标签: java - 生知涯</title>
+<title>面试历险记-乐信 - 生知涯</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="Coding Coding">
-<meta property="og:type" content="website">
-<meta property="og:title" content="生知涯">
-<meta property="og:url" content="http://yoursite.com/tags/java/index.html">
+    <meta name="description" content="今天去乐信参加了一场面试，问了一些问题，结果感觉自己的基础好差劲，有些东西长时间不碰也忘记了。伤心了，写下了供以后参考参考。">
+<meta name="keywords" content="面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试历险记-乐信">
+<meta property="og:url" content="http://yoursite.com/interview-LX/index.html">
 <meta property="og:site_name" content="生知涯">
-<meta property="og:description" content="Coding Coding">
+<meta property="og:description" content="今天去乐信参加了一场面试，问了一些问题，结果感觉自己的基础好差劲，有些东西长时间不碰也忘记了。伤心了，写下了供以后参考参考。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-08-21T14:43:15.351Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="生知涯">
-<meta name="twitter:description" content="Coding Coding">
+<meta name="twitter:title" content="面试历险记-乐信">
+<meta name="twitter:description" content="今天去乐信参加了一场面试，问了一些问题，结果感觉自己的基础好差劲，有些东西长时间不碰也忘记了。伤心了，写下了供以后参考参考。">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -92,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-              <!--  <img src="/博客#/images/logo.svg" alt="生知涯" height="28"> -->
+              <!--  <img src="/博客#/images/logo.svg" alt="面试历险记-乐信" height="28"> -->
 		Luther
             
             </a>
@@ -140,17 +142,6 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">java</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
     
     <div class="card-content article ">
         
@@ -159,7 +150,7 @@
                 <time class="level-item has-text-grey" datetime="2019-08-21T13:57:18.000Z">2019-08-21</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                <a class="has-link-grey -link" href="/categories/interview/">interview</a>
                 </div>
                 
                 
@@ -169,21 +160,52 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/object/">Object解析</a>
+                面试历险记-乐信
             
         </h1>
         <div class="content">
-            <p>所有类的超类都是<code>Object</code>，但是这种继承不是Java的显示继承方式<code>extends</code>,猜想应该是<code>c++</code>中的。<br>这个暂且不说，先来认识一下<code>Object</code>中的方法。</p>
+            <p>今天去乐信参加了一场面试，问了一些问题，结果感觉自己的基础好差劲，有些东西长时间不碰也忘记了。伤心了，写下了供以后参考参考。</p>
+<a id="more"></a>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><h3 id="like会不会用到索引？-张三、张三-、-张三-哪些用到了索引"><a href="#like会不会用到索引？-张三、张三-、-张三-哪些用到了索引" class="headerlink" title="like会不会用到索引？ %张三、张三%、%张三%哪些用到了索引"></a>like会不会用到索引？ <code>%张三</code>、<code>张三%</code>、<code>%张三%</code>哪些用到了索引</h3><blockquote>
+<p>参照索引最左原则， <code>%张三</code>是会使用到索引的， 但是<code>张三%</code>、<code>%张三%</code>不会用到</p>
+</blockquote>
+<h3 id="已知字段a和字段b都有独立索引，-那么-where-a-1-order-by-b会用到哪个索引"><a href="#已知字段a和字段b都有独立索引，-那么-where-a-1-order-by-b会用到哪个索引" class="headerlink" title="已知字段a和字段b都有独立索引， 那么 where a = 1 order by b会用到哪个索引"></a>已知字段<code>a</code>和字段<code>b</code>都有独立索引， 那么 <code>where a = 1 order by b</code>会用到哪个索引</h3><blockquote>
+<p>当语句是 <code>where a = 1 order by b</code>时 只会用到<code>a</code>字段索引 而 <code>b</code>字段索引不会用到<br>当语句是<code>order by b</code>时，会用到<code>b</code>字段索引<br>因为一条语句只会使用到一个索引， 而 where 和 order by 都会用到索引， 至于用到<code>a</code>的原因是 SQL的执行顺序。</p>
+</blockquote>
+<h2 id="zk的选举机制"><a href="#zk的选举机制" class="headerlink" title="zk的选举机制"></a>zk的选举机制</h2><blockquote>
+<p>不甚清楚，还待学习</p>
+</blockquote>
+<h2 id="zk的leader、follower、monitor的区别？"><a href="#zk的leader、follower、monitor的区别？" class="headerlink" title="zk的leader、follower、monitor的区别？"></a>zk的leader、follower、monitor的区别？</h2><blockquote>
+<p>monitor的功能与leader 和 follower基本一致，只是 monitor不能参加选举， 更详细的，待查</p>
+</blockquote>
+<h2 id="JVM运行的数据区域都存的什么东西？"><a href="#JVM运行的数据区域都存的什么东西？" class="headerlink" title="JVM运行的数据区域都存的什么东西？"></a>JVM运行的数据区域都存的什么东西？</h2><blockquote>
+<ul>
+<li>堆（Heap）：线程共享的，主要保存<code>对象实例</code>，它是<code>GC</code>的主要区域。当堆中没有足够的空间分配实例时会报<code>OutOfMemoryError</code></li>
+<li>虚拟机栈（Stack）: 线程私有的，生命周期与线程一致，描述的是JAVA方法的内存模型，执行方法时会创建一个栈帧，存储<code>局部变量表</code><br><code>操作数栈</code>、<code>动态链接</code>、<code>方法出口</code>等信息； <code>局部变量表</code>存放了编译期可知的<code>基本类型</code>和<code>对象引用</code>。线程请求深度超过栈规定时报<code>StackOverflowError</code>、动态扩展时如果无法申请到足够内存会报<code>OutOfMemoryError</code></li>
+<li>方法区（Method Area）: 线程共享的，用于存储<code>类信息</code>、<code>常量</code>、<code>静态变量</code>、<code>即时编译器编译后的代码</code>。会有<code>GC</code>,主要目标是常量池的回收和类型的卸载， 当无法满足分配需求是报<code>OutOfMemoryError</code><br>之所以不列出 <code>程序计数器</code>和<code>本地方法栈</code>的原因在于， <code>程序计数器</code>在某些虚拟机中并不存在，<code>本地方法栈</code>在某些虚拟机中与<code>方法区</code>合并了</li>
+</ul>
+</blockquote>
+<h2 id="RPC与HTTP的区别？"><a href="#RPC与HTTP的区别？" class="headerlink" title="RPC与HTTP的区别？"></a>RPC与HTTP的区别？</h2><blockquote>
+<p>RPC: 远程过程调用的协议； HTTP：超文本协议<br>RPC可以使用HTTP协议实现<br>这只是一部分，后面会单独写一篇出来</p>
+</blockquote>
+<h2 id="Kafka与RabbitMQ的技术选型"><a href="#Kafka与RabbitMQ的技术选型" class="headerlink" title="Kafka与RabbitMQ的技术选型"></a>Kafka与RabbitMQ的技术选型</h2><blockquote>
+<p>面试时主要是考察的广播性<br>RabbitMQ的广播要比Kafka的要差</p>
+</blockquote>
+<h2 id="公司的业务量、分库分表方案？"><a href="#公司的业务量、分库分表方案？" class="headerlink" title="公司的业务量、分库分表方案？"></a>公司的业务量、分库分表方案？</h2><blockquote>
+<p>面试官提供的建议是，在分表的时候关联信息的后缀<code>5</code>位或者更多，后缀使用数字，那么在分表的时候，可以参考后五位数字进行参考分表。</p>
+</blockquote>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/object/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/面试/">面试</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -193,7 +215,19 @@
 
 
 
-
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/object/">
+                <span class="level-item">Object解析</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
@@ -579,7 +613,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                   <!-- <img src="/博客#/images/logo.svg" alt="生知涯" height="28"> -->
+                   <!-- <img src="/博客#/images/logo.svg" alt="面试历险记-乐信" height="28"> -->
 			Luther
                 
                 </a>
