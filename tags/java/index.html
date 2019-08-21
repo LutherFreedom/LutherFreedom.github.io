@@ -2,7 +2,7 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>分类: MQ - 生知涯</title>
+<title>标签: java - 生知涯</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -10,7 +10,7 @@
     <meta name="description" content="Coding Coding">
 <meta property="og:type" content="website">
 <meta property="og:title" content="生知涯">
-<meta property="og:url" content="http://yoursite.com/categories/MQ/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/java/index.html">
 <meta property="og:site_name" content="生知涯">
 <meta property="og:description" content="Coding Coding">
 <meta property="og:locale" content="zh-CN">
@@ -143,9 +143,8 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/categories">分类</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">MQ</a></li>
+            <li><a href="/tags">标签</a></li>
+            <li class="is-active"><a href="#" aria-current="page">java</a></li>
         </ul>
         </nav>
     </div>
@@ -157,10 +156,10 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-31T09:00:00.000Z">2019-07-31</time>
+                <time class="level-item has-text-grey" datetime="2019-08-21T13:57:18.000Z">2019-08-21</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/MQ/">MQ</a>
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
                 </div>
                 
                 
@@ -170,21 +169,47 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/acquaint-rabbitMQ/">初识RabbitMQ（一）</a>
+                <a class="has-link-black-ter" href="/object/">Object解析</a>
             
         </h1>
         <div class="content">
-            <p>之前一直听别人说<code>Rabbit</code>、<code>Kafka</code>、<code>Rocket</code>这几类的MQ, 加之前段时间在项目中用到了<code>RabbitMQ</code>, 用的过程中对其中的概念并不是<br>很清楚，所以想去了解学习一下。</p>
+            <p>所有类的超类都是<code>Object</code>，但是这种继承不是Java的显示继承方式<code>extends</code>,猜想应该是<code>c++</code>中的。<br>这个暂且不说，先来认识一下<code>Object</code>中的方法。</p>
+<h2 id="registerNatives"><a href="#registerNatives" class="headerlink" title="registerNatives"></a>registerNatives</h2><blockquote>
+<p>在初始话Object类的时候，就会调用这个方法，应该是注册这个类。</p>
+</blockquote>
+<h2 id="Object构造器"><a href="#Object构造器" class="headerlink" title="Object构造器"></a>Object构造器</h2><blockquote>
+<p>会给一个空构造函数，这个是从java 1.0就已经有了。</p>
+</blockquote>
+<h2 id="getClass"><a href="#getClass" class="headerlink" title="getClass"></a>getClass</h2><blockquote>
+<p>获取运行时当前对象的类对象</p>
+</blockquote>
+<h2 id="hashCode"><a href="#hashCode" class="headerlink" title="hashCode"></a>hashCode</h2><blockquote>
+<p>计算对象的hash值，一般会被重写。是<code>equals</code>的伴侣，正常应用在两个对象的比较</p>
+</blockquote>
+<h2 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h2><blockquote>
+<p>判断当前对象是否与指定对象是否相等， 默认是比较是否是同一个引用， 一般满足不了我们的需求， 所以正常会重写它。</p>
+</blockquote>
+<h2 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h2><blockquote>
+<p>克隆当前对象，返回当前对象的克隆对象。但是只有继承了<code>Cloneable</code>接口的类才能使用该方法，否则会报<code>CloneNotSupportException</code>异常。注意：如果说对象的属性是其他对象的引用， 那么需要深度克隆。</p>
+</blockquote>
+<h2 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString"></a>toString</h2><blockquote>
+<p>将当前对象转成String， 默认返回 类名+地址值。这场会被我们重写，因为默认的方法正常没有用。</p>
+</blockquote>
+<h2 id="notify"><a href="#notify" class="headerlink" title="notify"></a>notify</h2><blockquote>
+<p>在锁争夺中唤醒一个等待该对象持有锁的其他对象， 让其对象进行锁争夺。注意当前线程必须是对象持有锁的线程，否则会报<code>IllegalMonitorStateException</code>。与之相同的还有<code>notifyAll</code>,它是唤醒所有等待中的对象。</p>
+</blockquote>
+<h2 id="notifyAll"><a href="#notifyAll" class="headerlink" title="notifyAll"></a>notifyAll</h2><blockquote>
+<p>在锁争夺中唤醒等待该对象持有锁的其他对象， 让对象进行锁争夺。注意当前线程必须是对象持有锁，否则会报<code>IllegalMonitorStateException</code>。与之相同的还有<code>notify</code>,它是唤醒所有等待中的对象。</p>
+</blockquote>
+<h2 id="wait"><a href="#wait" class="headerlink" title="wait"></a>wait</h2><blockquote>
+<p>当前线程等待，进入线程池等待，并且释放锁资源,等待<code>notify</code>唤醒。其实质调用的是它的重载方法 <code>wait(long timeoutMillis)</code>， 参数是 <code>0L</code></p>
+</blockquote>
+<h2 id="finalize"><a href="#finalize" class="headerlink" title="finalize"></a>finalize</h2><blockquote>
+<p>通知垃圾回收， 回收这个对象。但是什么时候回收是有GC自己控制的， 这个方法只是标识这个对象需要被回收了</p>
+</blockquote>
+
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/acquaint-rabbitMQ/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
