@@ -2,22 +2,24 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>标签: alibaba - 生知涯</title>
+<title>初识SpringCloudStream - 生知涯</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="Coding Coding">
-<meta property="og:type" content="website">
-<meta property="og:title" content="生知涯">
-<meta property="og:url" content="http://yoursite.com/tags/alibaba/index.html">
+    <meta name="description" content="初识SpringCloudStream  最近公司的一个新项目使用到了SpringCloudStream,自己也对它早有耳闻，所以接着这次的机会，了解学习一下它。">
+<meta name="keywords" content="SpringCloudStream rabbit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识SpringCloudStream">
+<meta property="og:url" content="http://yoursite.com/springCloudStream1/index.html">
 <meta property="og:site_name" content="生知涯">
-<meta property="og:description" content="Coding Coding">
+<meta property="og:description" content="初识SpringCloudStream  最近公司的一个新项目使用到了SpringCloudStream,自己也对它早有耳闻，所以接着这次的机会，了解学习一下它。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-08-30T02:54:23.944Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="生知涯">
-<meta name="twitter:description" content="Coding Coding">
+<meta name="twitter:title" content="初识SpringCloudStream">
+<meta name="twitter:description" content="初识SpringCloudStream  最近公司的一个新项目使用到了SpringCloudStream,自己也对它早有耳闻，所以接着这次的机会，了解学习一下它。">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -92,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-              <!--  <img src="/博客#/images/logo.svg" alt="生知涯" height="28"> -->
+              <!--  <img src="/博客#/images/logo.svg" alt="初识SpringCloudStream" height="28"> -->
 		Luther
             
             </a>
@@ -140,26 +142,15 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">alibaba</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-12T08:52:18.000Z">2019-08-12</time>
+                <time class="level-item has-text-grey" datetime="2019-08-30T02:53:18.000Z">2019-08-30</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/spring/">spring</a>
+                <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
                 </div>
                 
                 
@@ -169,21 +160,82 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/springalibaba/">SpringCloudAlibaba</a>
+                初识SpringCloudStream
             
         </h1>
         <div class="content">
-            <p>SpringCloudAlibaba现在感觉越来越多人知道了， 之前去参加了一次在深圳举办面基大会,了解了一下当前的现状。</p>
+            <h1 id="初识SpringCloudStream"><a href="#初识SpringCloudStream" class="headerlink" title="初识SpringCloudStream"></a>初识SpringCloudStream</h1><blockquote>
+<p> 最近公司的一个新项目使用到了SpringCloudStream,自己也对它早有耳闻，所以接着这次的机会，了解学习一下它。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>SpringCloudStream是一个用来为微服务应用构建消息驱动能力的架构，可以基于Spring Boot来创建独立的可用于生产的Spring应用程序。<br>其实质依旧是Spring Integration，它利用Spring Integration来连接消息<code>代理</code>中间件。<br>目前支持消息中间件有RabbitMQ，Kafka。</p>
+</blockquote>
+<ul>
+<li>SpringCloudStream处理架构</li>
+</ul>
+<h2 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h2><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">server:</span></span><br><span class="line"><span class="hljs-attr">  port:</span> <span class="hljs-number">8080</span></span><br><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line"><span class="hljs-attr">  rabbitmq:</span></span><br><span class="line"><span class="hljs-attr">    host:</span> <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span></span><br><span class="line"><span class="hljs-attr">    port:</span> <span class="hljs-number">5672</span></span><br><span class="line"><span class="hljs-attr">    username:</span> <span class="hljs-string">guest</span></span><br><span class="line"><span class="hljs-attr">    password:</span> <span class="hljs-string">guest</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//消费者</span></span><br><span class="line"><span class="hljs-meta">@StreamListener</span>(SINK.INPUT)</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">receiver</span><span class="hljs-params">(Object payload)</span> </span>&#123;</span><br><span class="line">        String profile = System.getProperty(<span class="hljs-string">"profile"</span>);</span><br><span class="line">        System.out.println(<span class="hljs-string">"Received : "</span>  + profile + <span class="hljs-string">"-&gt;"</span>+ payload);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Autowire</span></span><br><span class="line"><span class="hljs-keyword">private</span> Source source;</span><br><span class="line"><span class="hljs-comment">//生产者</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sendMsg</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    source.output().send(MessageBuilder.withPayload(<span class="hljs-string">"Test Demo"</span>).build());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@SpringBootApplication</span></span><br><span class="line"><span class="hljs-meta">@EnableBinding</span>(&#123; Sink.class,Source.class&#125;)</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StreamApplication</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(StreamApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>以<code>rabbitMQ</code>举例，运行时会创建两个<code>Exchange</code>(<code>input</code>、<code>output</code>)及其<code>input</code>相应的<code>Queue</code>（<code>input.anonymous.3_HBKc9TTFSML-9UtlHz_g</code>），而等到发送消息时会新建一个<code>Connection</code>用于发送。</p>
+</blockquote>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="Binder-绑定器"><a href="#Binder-绑定器" class="headerlink" title="Binder 绑定器"></a>Binder 绑定器</h3><blockquote>
+<p>Binder的作用在于隔离各种消息中间件的细节，统一暴露Channel通道。</p>
+</blockquote>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line"><span class="hljs-attr">    cloud:</span></span><br><span class="line"><span class="hljs-attr">        stream:</span></span><br><span class="line"><span class="hljs-attr">            bindings:</span></span><br><span class="line"><span class="hljs-attr">                input:</span></span><br><span class="line"><span class="hljs-attr">                    destination:</span> <span class="hljs-string">aa</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="消费组"><a href="#消费组" class="headerlink" title="消费组"></a>消费组</h3><blockquote>
+<p>当同一个消息有多个消费者，且只想被一个消费者消费时，使用消费组就可以解决这个问题</p>
+</blockquote>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line"><span class="hljs-attr">  cloud:</span></span><br><span class="line"><span class="hljs-attr">    stream:</span></span><br><span class="line"><span class="hljs-attr">      bindings:</span></span><br><span class="line"><span class="hljs-attr">        input:</span></span><br><span class="line"><span class="hljs-attr">          group:</span> <span class="hljs-string">demo-A</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>某些场景下，我们需要在同一个实例上使用同一个channel进行消息的收发，那么我们会发现<code>output</code>和<code>input</code>的通道名一致时会报bean已存在的错， 我们可以通过<code>destination</code>来配置</p>
+</blockquote>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line"><span class="hljs-attr">  cloud:</span></span><br><span class="line"><span class="hljs-attr">    stream:</span></span><br><span class="line"><span class="hljs-attr">      bindings:</span></span><br><span class="line"><span class="hljs-attr">        input:</span></span><br><span class="line"><span class="hljs-attr">         destination:</span> <span class="hljs-string">des-A</span></span><br><span class="line"><span class="hljs-attr">        output:</span></span><br><span class="line"><span class="hljs-attr">         destination:</span> <span class="hljs-string">des-A</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="消息分区"><a href="#消息分区" class="headerlink" title="消息分区"></a>消息分区</h3><blockquote>
+<p>有时候我们想将一类的消息，都只交给某个消费者消费，那么就需要进行消息的分区处理了</p>
+</blockquote>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># consumer</span></span><br><span class="line"><span class="hljs-attr">cloud:</span></span><br><span class="line"><span class="hljs-attr">    stream:</span></span><br><span class="line"><span class="hljs-attr">      bindings:</span></span><br><span class="line"><span class="hljs-attr">        intput:</span></span><br><span class="line">          <span class="hljs-comment"># 开启消费者分区功能</span></span><br><span class="line"><span class="hljs-attr">          partitioned:</span> <span class="hljs-string">trueh</span></span><br><span class="line">      <span class="hljs-comment"># 总实例数</span></span><br><span class="line"><span class="hljs-attr">      instanceCount:</span> <span class="hljs-number">2</span></span><br><span class="line">      <span class="hljs-comment"># 当前实例索引号</span></span><br><span class="line"><span class="hljs-attr">      instanceIndex:</span> <span class="hljs-number">0</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#producer</span></span><br><span class="line"><span class="hljs-attr">cloud:</span></span><br><span class="line"><span class="hljs-attr">    stream:</span></span><br><span class="line"><span class="hljs-attr">      bindings:</span></span><br><span class="line"><span class="hljs-attr">        out-put:</span></span><br><span class="line"><span class="hljs-attr">          producer:</span></span><br><span class="line">            <span class="hljs-comment"># SPEL 分区键的表达式规则</span></span><br><span class="line"><span class="hljs-attr">            partitionKeyExpression:</span> <span class="hljs-string">payload</span></span><br><span class="line">            <span class="hljs-comment"># 分区数量</span></span><br><span class="line"><span class="hljs-attr">            partitionCount:</span> <span class="hljs-number">2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="消息类型"><a href="#消息类型" class="headerlink" title="消息类型"></a>消息类型</h3><blockquote>
+<p>SpringCloudStream默认实现了多个消息转换的方式，我们可以使用<code>spring.cloud.stream.bindings.&lt;channelName&gt;.conten-type</code>来声明配置消息内容的类型</p>
+</blockquote>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line"><span class="hljs-attr">  cloud:</span></span><br><span class="line"><span class="hljs-attr">    stream:</span></span><br><span class="line"><span class="hljs-attr">      bindings:</span></span><br><span class="line"><span class="hljs-attr">        input:</span></span><br><span class="line"><span class="hljs-attr">          contentType:</span> <span class="hljs-string">application/json</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="多绑定器的配置"><a href="#多绑定器的配置" class="headerlink" title="多绑定器的配置"></a>多绑定器的配置</h3><blockquote>
+<p>一些场景下，可能一个实例存在多个绑定器，而SpringCloudStream在为消息通道绑定是，无法判断使用哪个绑定器，这时候需要我们指定绑定器。而在使用时往往会有一个绑定器为主要使用，另一个用得少，我们可以通过绑定默认绑定器来指定多数通道的绑定器，之后再为其他通道设置绑定器</p>
+</blockquote>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line"><span class="hljs-attr">  cloud:</span></span><br><span class="line"><span class="hljs-attr">    stream:</span></span><br><span class="line"><span class="hljs-attr">      defaultBinder:</span> <span class="hljs-string">rabbit</span></span><br><span class="line"><span class="hljs-attr">    bindings:</span></span><br><span class="line"><span class="hljs-attr">      input:</span></span><br><span class="line"><span class="hljs-attr">        binder:</span> <span class="hljs-string">kafka</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>当然我们也可使用同个类型不同环境的绑定器</p>
+</blockquote>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">spring:</span></span><br><span class="line"><span class="hljs-attr">  cloud:</span></span><br><span class="line"><span class="hljs-attr">    stream:</span></span><br><span class="line"><span class="hljs-attr">      bindings:</span></span><br><span class="line"><span class="hljs-attr">        input:</span></span><br><span class="line"><span class="hljs-attr">          binder:</span> <span class="hljs-string">rabbit1</span></span><br><span class="line"><span class="hljs-attr">        output:</span></span><br><span class="line"><span class="hljs-attr">          binder:</span> <span class="hljs-string">rabbit2</span></span><br><span class="line"><span class="hljs-attr">      binders:</span></span><br><span class="line"><span class="hljs-attr">        rabbit1:</span></span><br><span class="line"><span class="hljs-attr">          type:</span> <span class="hljs-string">rabbit</span></span><br><span class="line"><span class="hljs-attr">          environment:</span></span><br><span class="line"><span class="hljs-attr">            spring:</span></span><br><span class="line"><span class="hljs-attr">              rabbitmq:</span></span><br><span class="line"><span class="hljs-attr">                hout:</span> <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span></span><br><span class="line"><span class="hljs-attr">                port:</span> <span class="hljs-number">5672</span></span><br><span class="line"><span class="hljs-attr">                username:</span> <span class="hljs-string">guest</span></span><br><span class="line"><span class="hljs-attr">                password:</span> <span class="hljs-string">guest</span></span><br><span class="line"><span class="hljs-attr">        rabbit2:</span></span><br><span class="line"><span class="hljs-attr">          type:</span> <span class="hljs-string">rabbit</span></span><br><span class="line"><span class="hljs-attr">          environment:</span></span><br><span class="line"><span class="hljs-attr">            spring:</span></span><br><span class="line"><span class="hljs-attr">              rabbitmq:</span></span><br><span class="line"><span class="hljs-attr">                hout:</span> <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span></span><br><span class="line"><span class="hljs-attr">                port:</span> <span class="hljs-number">5673</span></span><br><span class="line"><span class="hljs-attr">                username:</span> <span class="hljs-string">guest</span></span><br><span class="line"><span class="hljs-attr">                password:</span> <span class="hljs-string">guest</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Last"><a href="#Last" class="headerlink" title="Last"></a>Last</h2><blockquote>
+<p>以上便是SpringCloudStream的一些使用，但是是跟RabbitMQ结合，事实上，与Kafka结合的话还是有些不同。</p>
+</blockquote>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/springalibaba/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/SpringCloudStream-rabbit/">SpringCloudStream rabbit</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -193,7 +245,19 @@
 
 
 
-
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/interview-LX/">
+                <span class="level-item">面试历险记-乐信</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
@@ -579,7 +643,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                   <!-- <img src="/博客#/images/logo.svg" alt="生知涯" height="28"> -->
+                   <!-- <img src="/博客#/images/logo.svg" alt="初识SpringCloudStream" height="28"> -->
 			Luther
                 
                 </a>
