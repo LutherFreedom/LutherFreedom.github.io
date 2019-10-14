@@ -146,11 +146,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-14T08:50:17.000Z">2019-10-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java/">Java</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2019-10-14T09:09:07.196Z">2019-10-14</time>
                 
                 
                 
@@ -159,11 +155,18 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/jstat/">jstat command</a>
+                <a class="has-link-black-ter" href="/jstat/"></a>
             
         </h1>
         <div class="content">
-            <h2 id="jstat工具的主要选项"><a href="#jstat工具的主要选项" class="headerlink" title="jstat工具的主要选项"></a>jstat工具的主要选项</h2><table>
+            <hr>
+<p>title: jstat工具<br>date: 2019-10-10 15:48:18<br>tags: </p>
+<ul>
+<li>JVM<br>categories:</li>
+<li>Java</li>
+</ul>
+<hr>
+<h2 id="jstat工具的主要选项"><a href="#jstat工具的主要选项" class="headerlink" title="jstat工具的主要选项"></a>jstat工具的主要选项</h2><table>
 <thead>
 <tr>
 <th align="left">选项</th>
@@ -218,18 +221,349 @@
 <td align="left">-gcmetacapacity</td>
 <td align="left">输出元数据空间使用信息</td>
 </tr>
+</tbody></table>
+<h2 id="class"><a href="#class" class="headerlink" title="-class"></a>-class</h2><table>
+<thead>
 <tr>
-<td align="left"></td></tr></tbody></table>
+<th align="left">Loaded</th>
+<th align="left">Bytes</th>
+<th align="left">Unloaded</th>
+<th align="left">Bytes</th>
+<th align="left">Time</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">装载的类的数量</td>
+<td align="left">装载类所占用的字节数</td>
+<td align="left">卸载类的数量</td>
+<td align="left">卸载类的字节数</td>
+<td align="left">装载和卸载类所花费的时间</td>
+</tr>
+</tbody></table>
+<h2 id="gc"><a href="#gc" class="headerlink" title="-gc"></a>-gc</h2><table>
+<thead>
+<tr>
+<th align="left">S0C</th>
+<th align="left">S1C</th>
+<th align="left">S0U</th>
+<th align="left">S1U</th>
+<th align="left">EC</th>
+<th align="left">EU</th>
+<th align="left">OC</th>
+<th align="left">OU</th>
+<th align="left">MC</th>
+<th align="left">MU</th>
+<th align="left">CCSC</th>
+<th align="left">CCSU</th>
+<th align="left">YGC</th>
+<th align="left">YGCT</th>
+<th align="left">FGC</th>
+<th align="left">FGCT</th>
+<th align="left">CGC</th>
+<th align="left">CGCT</th>
+<th align="left">GCT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">年轻代中第一个survivor的容量</td>
+<td align="left">年轻代中第二个survivor的容量</td>
+<td align="left">年轻代中第一个survivor目前已使用的空间</td>
+<td align="left">年轻代中第二个survivor目前已使用的空间</td>
+<td align="left">年轻代中Eden的容量</td>
+<td align="left">年轻代中Eden目前已使用空间</td>
+<td align="left">Old代的容量</td>
+<td align="left">Old代目前已使用的空间</td>
+<td align="left">元空间的容量</td>
+<td align="left">元空间目前已使用空间</td>
+<td align="left">压缩类空间大小</td>
+<td align="left">压缩类空间使用大小</td>
+<td align="left">年轻代<code>gc</code>次数</td>
+<td align="left">年轻代<code>gc</code>时间</td>
+<td align="left">old代<code>gc</code>次数</td>
+<td align="left">old代<code>gc</code>所用时间</td>
+<td align="left">并行<code>GC</code>收集次数</td>
+<td align="left">并行<code>GC</code>收集所用时间</td>
+<td align="left"><code>gc</code>总时间</td>
+</tr>
+</tbody></table>
+<h2 id="gccapacity"><a href="#gccapacity" class="headerlink" title="-gccapacity"></a>-gccapacity</h2><table>
+<thead>
+<tr>
+<th align="left">NGCMN</th>
+<th align="left">NGCMX</th>
+<th align="left">NGC</th>
+<th align="left">S0C</th>
+<th align="left">S1C</th>
+<th align="left">EC</th>
+<th align="left">OGCMN</th>
+<th align="left">OGCMX</th>
+<th align="left">OGC</th>
+<th align="left">OC</th>
+<th align="left">MCMN</th>
+<th align="left">MCMX</th>
+<th align="left">MC</th>
+<th align="left">CCSMN</th>
+<th align="left">CCSMX</th>
+<th align="left">CCSC</th>
+<th align="left">YGC</th>
+<th align="left">FGC</th>
+<th align="left">CGC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">新生代最小容量</td>
+<td align="left">新生代最大容量</td>
+<td align="left">当前新生代容量</td>
+<td align="left">第一个survivor大小</td>
+<td align="left">第二个survivor大小</td>
+<td align="left">Eden区大小</td>
+<td align="left">老年代最小容量</td>
+<td align="left">老年代最大容量</td>
+<td align="left">Old代当前新生成的容量</td>
+<td align="left">Old代的容量</td>
+<td align="left">最小元数据容量</td>
+<td align="left">最大元数据容量</td>
+<td align="left">当前元数据空间</td>
+<td align="left">压缩类空间最小值</td>
+<td align="left">压缩类空间最大值</td>
+<td align="left">压缩类空间大小</td>
+<td align="left">年轻代<code>GC</code>次数</td>
+<td align="left"><code>FULL GC</code>的次数</td>
+<td align="left">并行<code>GC</code>次数</td>
+</tr>
+</tbody></table>
+<h2 id="gcutil"><a href="#gcutil" class="headerlink" title="-gcutil"></a>-gcutil</h2><table>
+<thead>
+<tr>
+<th align="left">S0</th>
+<th align="left">S1</th>
+<th align="left">E</th>
+<th align="left">O</th>
+<th align="left">M</th>
+<th align="left">CCS</th>
+<th align="left">YGC</th>
+<th align="left">YGCT</th>
+<th align="left">FGC</th>
+<th align="left">FGCT</th>
+<th align="left">CGC</th>
+<th align="left">CGCT</th>
+<th align="left">GCT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">surivor1已使用容量百分比</td>
+<td align="left">survivor2以使用容量百分比</td>
+<td align="left">Eden使用容量百分比</td>
+<td align="left">Old代已使用容量百分比</td>
+<td align="left">元数据空间已使用容量百分比</td>
+<td align="left">压缩使用比例</td>
+<td align="left">年轻代<code>GC</code>次数</td>
+<td align="left">年轻代<code>GC</code>时间</td>
+<td align="left"><code>FULLGC</code>次数</td>
+<td align="left"><code>FULLGC</code>时间</td>
+<td align="left">并行<code>GC</code>次数</td>
+<td align="left">并行<code>GC</code>时间</td>
+<td align="left"><code>GC</code>时间</td>
+</tr>
+</tbody></table>
+<h2 id="gcnew"><a href="#gcnew" class="headerlink" title="-gcnew"></a>-gcnew</h2><table>
+<thead>
+<tr>
+<th align="left">S0C</th>
+<th align="left">S1C</th>
+<th align="left">S0U</th>
+<th align="left">S1U</th>
+<th align="left">TT</th>
+<th align="left">MTT</th>
+<th align="left">DSS</th>
+<th align="left">EC</th>
+<th align="left">EU</th>
+<th align="left">YGC</th>
+<th align="left">YGCT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>surivor0</code>的容量</td>
+<td align="left"><code>survior1</code>的容量</td>
+<td align="left"><code>survior0</code>的利用率</td>
+<td align="left"><code>survior1</code>的利用率</td>
+<td align="left">持有次数限制</td>
+<td align="left">最大持有次数</td>
+<td align="left">期望<code>survior</code>大小</td>
+<td align="left"><code>Eden</code>大小</td>
+<td align="left"><code>Eden</code>利用率</td>
+<td align="left">年轻代<code>GC</code>次数</td>
+<td align="left">年轻代<code>GC</code>时间</td>
+</tr>
+</tbody></table>
+<h2 id="gcnewcapacity"><a href="#gcnewcapacity" class="headerlink" title="-gcnewcapacity"></a>-gcnewcapacity</h2><table>
+<thead>
+<tr>
+<th align="left">NGCMN</th>
+<th align="left">NGCMX</th>
+<th align="left">NGC</th>
+<th align="left">S0CMX</th>
+<th align="left">S0C</th>
+<th align="left">S1CMX</th>
+<th align="left">S1C</th>
+<th align="left">ECMX</th>
+<th align="left">EC</th>
+<th align="left">YGC</th>
+<th align="left">FGC</th>
+<th align="left">CGC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">最小新生代大小</td>
+<td align="left">最大新生代大小</td>
+<td align="left">新生代大小</td>
+<td align="left">最大<code>survior0</code>容量大小</td>
+<td align="left"><code>survior0</code>大小</td>
+<td align="left">最大<code>survior1</code>容量大小</td>
+<td align="left"><code>survior1</code>大小</td>
+<td align="left">最大<code>Eden</code>区容量</td>
+<td align="left"><code>Eden</code>容量</td>
+<td align="left">年轻代<code>GC</code>次数</td>
+<td align="left"><code>Full GC</code> 次数</td>
+<td align="left">并发<code>GC</code>次数</td>
+</tr>
+</tbody></table>
+<h2 id="gcold"><a href="#gcold" class="headerlink" title="-gcold"></a>-gcold</h2><table>
+<thead>
+<tr>
+<th align="left">MC</th>
+<th align="left">MU</th>
+<th align="left">CCSC</th>
+<th align="left">CCSU</th>
+<th align="left">OC</th>
+<th align="left">OU</th>
+<th align="left">YGC</th>
+<th align="left">FGC</th>
+<th align="left">FGCT</th>
+<th align="left">CGC</th>
+<th align="left">CGCT</th>
+<th align="left">GCT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">当前元数据空间大小</td>
+<td align="left">元数据空间利用率</td>
+<td align="left">压缩类空间大小</td>
+<td align="left">压缩类空间利用率</td>
+<td align="left">老年代大小</td>
+<td align="left">老年代利用率</td>
+<td align="left">年轻代<code>GC</code>次数</td>
+<td align="left"><code>FULL GC</code>次数</td>
+<td align="left"><code>FULL GC</code>时间</td>
+<td align="left">并行收集次数</td>
+<td align="left">并行收集时间</td>
+<td align="left"><code>GC</code>时间</td>
+</tr>
+</tbody></table>
+<h2 id="gcoldcapacity"><a href="#gcoldcapacity" class="headerlink" title="-gcoldcapacity"></a>-gcoldcapacity</h2><table>
+<thead>
+<tr>
+<th align="left">OGCMN</th>
+<th align="left">OGCMX</th>
+<th align="left">OGC</th>
+<th align="left">OC</th>
+<th align="left">YGC</th>
+<th align="left">FGC</th>
+<th align="left">FGCT</th>
+<th align="left">CGC</th>
+<th align="left">CGCT</th>
+<th align="left">GCT</th>
+</tr>
+</thead>
+</table>
+<h2 id="gcpermcapacity"><a href="#gcpermcapacity" class="headerlink" title="-gcpermcapacity"></a>-gcpermcapacity</h2><ul>
+<li>Java11中不存在 替换它的是<code>gcmetacapacity</code></li>
+</ul>
+<h2 id="gcmetacapacity"><a href="#gcmetacapacity" class="headerlink" title="-gcmetacapacity"></a>-gcmetacapacity</h2><table>
+<thead>
+<tr>
+<th align="left">MCMN</th>
+<th align="left">MCMX</th>
+<th align="left">MC</th>
+<th align="left">CCSMN</th>
+<th align="left">CCSMX</th>
+<th align="left">CCSC</th>
+<th align="left">YGC</th>
+<th align="left">FGC</th>
+<th align="left">FGCT</th>
+<th align="left">CGC</th>
+<th align="left">CGCT</th>
+<th align="left">GCT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">元数据空间最小值</td>
+<td align="left">元数据空间最大值</td>
+<td align="left">元数据空间大小</td>
+<td align="left">压缩的类空间最小值</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">压缩类空间的最大值</td>
+<td align="left">年轻代<code>GC</code>次数</td>
+<td align="left"><code>FULL GC</code>次数</td>
+<td align="left">并行<code>GC</code>次数</td>
+<td align="left">并行<code>GC</code>时间</td>
+<td align="left"><code>GC</code>总时间</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="compiler"><a href="#compiler" class="headerlink" title="-compiler"></a>-compiler</h2><table>
+<thead>
+<tr>
+<th align="left">Compiled</th>
+<th align="left">Failed</th>
+<th align="left">Invalid</th>
+<th align="left">Time</th>
+<th align="left">FailedType</th>
+<th align="left">FailedMethod</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">被执行的编译任务数量</td>
+<td align="left">失败的编译任务数量</td>
+<td align="left">无效的编译任务数量</td>
+<td align="left">编译任务用的时间</td>
+<td align="left">最近编译失败的编译类型</td>
+<td align="left">最近编译失败的类名和方法名</td>
+</tr>
+</tbody></table>
+<h2 id="printcompilation"><a href="#printcompilation" class="headerlink" title="-printcompilation"></a>-printcompilation</h2><table>
+<thead>
+<tr>
+<th align="left">Compiled</th>
+<th align="left">Size</th>
+<th align="left">Type</th>
+<th align="left">Method</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">有最近编译方法执行的编译任务数量</td>
+<td align="left">最近编译方法的字节码的字节数</td>
+<td align="left">最近编译方法的编译类型</td>
+<td align="left">最近编译识别的类名 和 方法名</td>
+</tr>
+</tbody></table>
+
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/jstat/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
@@ -691,10 +1025,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-14T08:50:17.000Z">2019-10-14</time></div>
-                    <a href="/jstat/" class="has-link-black-ter is-size-6">jstat command</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-14T09:09:07.196Z">2019-10-14</time></div>
+                    <a href="/jstat/" class="has-link-black-ter is-size-6"></a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java/">Java</a>
+                        
                     </p>
                 </div>
             </div>
@@ -762,7 +1096,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/AMQP/" style="font-size: 10px;">AMQP</a> <a href="/tags/Alibaba/" style="font-size: 10px;">Alibaba</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/JVM/" style="font-size: 20px;">JVM</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringCloudStream-rabbit/" style="font-size: 10px;">SpringCloudStream rabbit</a> <a href="/tags/诗/" style="font-size: 10px;">诗</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+        <a href="/tags/AMQP/" style="font-size: 10px;">AMQP</a> <a href="/tags/Alibaba/" style="font-size: 10px;">Alibaba</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/JVM/" style="font-size: 10px;">JVM</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringCloudStream-rabbit/" style="font-size: 10px;">SpringCloudStream rabbit</a> <a href="/tags/诗/" style="font-size: 10px;">诗</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
 </div>
 
@@ -835,10 +1169,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-14T08:50:17.000Z">2019-10-14</time></div>
-                    <a href="/jstat/" class="has-link-black-ter is-size-6">jstat command</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-14T09:09:07.196Z">2019-10-14</time></div>
+                    <a href="/jstat/" class="has-link-black-ter is-size-6"></a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java/">Java</a>
+                        
                     </p>
                 </div>
             </div>
@@ -906,7 +1240,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/AMQP/" style="font-size: 10px;">AMQP</a> <a href="/tags/Alibaba/" style="font-size: 10px;">Alibaba</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/JVM/" style="font-size: 20px;">JVM</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringCloudStream-rabbit/" style="font-size: 10px;">SpringCloudStream rabbit</a> <a href="/tags/诗/" style="font-size: 10px;">诗</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+        <a href="/tags/AMQP/" style="font-size: 10px;">AMQP</a> <a href="/tags/Alibaba/" style="font-size: 10px;">Alibaba</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/JVM/" style="font-size: 10px;">JVM</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringCloudStream-rabbit/" style="font-size: 10px;">SpringCloudStream rabbit</a> <a href="/tags/诗/" style="font-size: 10px;">诗</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
 </div>
 
