@@ -2,23 +2,24 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>生知涯</title>
+<title>jstat工具 - 生知涯</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="title: jstat工具date: 2019-10-10 15:48:18tags:   JVMcategories: Java   jstat工具的主要选项   选项 作用    -class 监视类装载、卸载数量、总空间以及类装载所耗费的时间   -gc 监视Java堆状况，包括Eden区、两个survivor区、老年代、永久代等的容量、已用空间、GC时间合计等信息   -gccapac">
+    <meta name="description" content="jstat 用于监视虚拟机各种运行状态信息的命令行工具；它可以显示本地或者远程虚拟机进程中的类装在、内存、垃圾收集、JIT编译等运行数据。">
+<meta name="keywords" content="JVM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="生知涯">
+<meta property="og:title" content="jstat工具">
 <meta property="og:url" content="http://yoursite.com/jstat/index.html">
 <meta property="og:site_name" content="生知涯">
-<meta property="og:description" content="title: jstat工具date: 2019-10-10 15:48:18tags:   JVMcategories: Java   jstat工具的主要选项   选项 作用    -class 监视类装载、卸载数量、总空间以及类装载所耗费的时间   -gc 监视Java堆状况，包括Eden区、两个survivor区、老年代、永久代等的容量、已用空间、GC时间合计等信息   -gccapac">
+<meta property="og:description" content="jstat 用于监视虚拟机各种运行状态信息的命令行工具；它可以显示本地或者远程虚拟机进程中的类装在、内存、垃圾收集、JIT编译等运行数据。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-10-14T09:12:02.927Z">
+<meta property="og:updated_time" content="2019-10-14T09:14:23.427Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="生知涯">
-<meta name="twitter:description" content="title: jstat工具date: 2019-10-10 15:48:18tags:   JVMcategories: Java   jstat工具的主要选项   选项 作用    -class 监视类装载、卸载数量、总空间以及类装载所耗费的时间   -gc 监视Java堆状况，包括Eden区、两个survivor区、老年代、永久代等的容量、已用空间、GC时间合计等信息   -gccapac">
+<meta name="twitter:title" content="jstat工具">
+<meta name="twitter:description" content="jstat 用于监视虚拟机各种运行状态信息的命令行工具；它可以显示本地或者远程虚拟机进程中的类装在、内存、垃圾收集、JIT编译等运行数据。">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -93,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-              <!--  <img src="/博客#/images/logo.svg" alt="" height="28"> -->
+              <!--  <img src="/博客#/images/logo.svg" alt="jstat工具" height="28"> -->
 		Luther
             
             </a>
@@ -146,7 +147,11 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-14T09:12:02.928Z">2019-10-14</time>
+                <time class="level-item has-text-grey" datetime="2019-10-10T07:48:18.000Z">2019-10-10</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Java/">Java</a>
+                </div>
                 
                 
                 
@@ -155,17 +160,14 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                
+                jstat工具
             
         </h1>
         <div class="content">
-            <hr>
-<p>title: jstat工具<br>date: 2019-10-10 15:48:18<br>tags: </p>
-<ul>
-<li>JVM<br>categories:</li>
-<li>Java</li>
-</ul>
-<hr>
+            <blockquote>
+<p>jstat 用于监视虚拟机各种运行状态信息的命令行工具；它可以显示本地或者远程虚拟机进程中的类装在、内存、垃圾收集、JIT编译等运行数据。</p>
+</blockquote>
+<a id="more"></a>
 <h2 id="jstat工具的主要选项"><a href="#jstat工具的主要选项" class="headerlink" title="jstat工具的主要选项"></a>jstat工具的主要选项</h2><table>
 <thead>
 <tr>
@@ -501,28 +503,14 @@
 <td align="left">元数据空间最大值</td>
 <td align="left">元数据空间大小</td>
 <td align="left">压缩的类空间最小值</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
 <td align="left">压缩类空间的最大值</td>
+<td align="left">压缩的类空间大小</td>
 <td align="left">年轻代<code>GC</code>次数</td>
 <td align="left"><code>FULL GC</code>次数</td>
+<td align="left"><code>FULL GC</code>时间</td>
 <td align="left">并行<code>GC</code>次数</td>
 <td align="left">并行<code>GC</code>时间</td>
 <td align="left"><code>GC</code>总时间</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
 </tr>
 </tbody></table>
 <h2 id="compiler"><a href="#compiler" class="headerlink" title="-compiler"></a>-compiler</h2><table>
@@ -562,6 +550,15 @@
 </tr>
 </tbody></table>
 
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/JVM/">JVM</a>
+                </div>
+            </div>
         </div>
         
         
@@ -715,10 +712,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-14T09:12:02.928Z">2019-10-14</time></div>
-                    <a href="/jstat/" class="has-link-black-ter is-size-6"></a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T07:48:18.000Z">2019-10-10</time></div>
+                    <a href="/jstat/" class="has-link-black-ter is-size-6">jstat工具</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Java/">Java</a>
                     </p>
                 </div>
             </div>
@@ -786,7 +783,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/AMQP/" style="font-size: 10px;">AMQP</a> <a href="/tags/Alibaba/" style="font-size: 10px;">Alibaba</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/JVM/" style="font-size: 10px;">JVM</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringCloudStream-rabbit/" style="font-size: 10px;">SpringCloudStream rabbit</a> <a href="/tags/诗/" style="font-size: 10px;">诗</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+        <a href="/tags/AMQP/" style="font-size: 10px;">AMQP</a> <a href="/tags/Alibaba/" style="font-size: 10px;">Alibaba</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/JVM/" style="font-size: 20px;">JVM</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringCloudStream-rabbit/" style="font-size: 10px;">SpringCloudStream rabbit</a> <a href="/tags/诗/" style="font-size: 10px;">诗</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
 </div>
 
@@ -859,10 +856,10 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-14T09:12:02.928Z">2019-10-14</time></div>
-                    <a href="/jstat/" class="has-link-black-ter is-size-6"></a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T07:48:18.000Z">2019-10-10</time></div>
+                    <a href="/jstat/" class="has-link-black-ter is-size-6">jstat工具</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Java/">Java</a>
                     </p>
                 </div>
             </div>
@@ -930,7 +927,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/AMQP/" style="font-size: 10px;">AMQP</a> <a href="/tags/Alibaba/" style="font-size: 10px;">Alibaba</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/JVM/" style="font-size: 10px;">JVM</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringCloudStream-rabbit/" style="font-size: 10px;">SpringCloudStream rabbit</a> <a href="/tags/诗/" style="font-size: 10px;">诗</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+        <a href="/tags/AMQP/" style="font-size: 10px;">AMQP</a> <a href="/tags/Alibaba/" style="font-size: 10px;">Alibaba</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/JVM/" style="font-size: 20px;">JVM</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringCloudStream-rabbit/" style="font-size: 10px;">SpringCloudStream rabbit</a> <a href="/tags/诗/" style="font-size: 10px;">诗</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
 </div>
 
@@ -993,7 +990,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                   <!-- <img src="/博客#/images/logo.svg" alt="" height="28"> -->
+                   <!-- <img src="/博客#/images/logo.svg" alt="jstat工具" height="28"> -->
 			Luther
                 
                 </a>
