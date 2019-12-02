@@ -2,24 +2,24 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Object解析 - 生知涯</title>
+<title>Object in jvm - 生知涯</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="所有类的超类都是Object，但是这种继承不是Java的显示继承方式extends,猜想应该是c++中的。这个暂且不说，先来认识一下Object中的方法。">
-<meta name="keywords" content="Java">
+    <meta name="description" content="对象的创建 语言层面上： new关键字 虚拟机：new指令-&amp;gt; 检查指令参数能否在常量池中定位到一个类的符号引用-&amp;gt;检查这个类的符号引用是否被加载、解析和初始化过（没有需要执行类记载）-&amp;gt;为新生对象分配新内存（对象的大小在类加载完成后可确认）-&amp;gt;设置对象头信息-&amp;gt;执行指令">
+<meta name="keywords" content="jvm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Object解析">
-<meta property="og:url" content="http://yoursite.com/object/index.html">
+<meta property="og:title" content="Object in jvm">
+<meta property="og:url" content="http://yoursite.com/Object/index.html">
 <meta property="og:site_name" content="生知涯">
-<meta property="og:description" content="所有类的超类都是Object，但是这种继承不是Java的显示继承方式extends,猜想应该是c++中的。这个暂且不说，先来认识一下Object中的方法。">
+<meta property="og:description" content="对象的创建 语言层面上： new关键字 虚拟机：new指令-&amp;gt; 检查指令参数能否在常量池中定位到一个类的符号引用-&amp;gt;检查这个类的符号引用是否被加载、解析和初始化过（没有需要执行类记载）-&amp;gt;为新生对象分配新内存（对象的大小在类加载完成后可确认）-&amp;gt;设置对象头信息-&amp;gt;执行指令">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-30T10:01:58.551Z">
+<meta property="og:updated_time" content="2019-12-02T16:47:04.384Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Object解析">
-<meta name="twitter:description" content="所有类的超类都是Object，但是这种继承不是Java的显示继承方式extends,猜想应该是c++中的。这个暂且不说，先来认识一下Object中的方法。">
+<meta name="twitter:title" content="Object in jvm">
+<meta name="twitter:description" content="对象的创建 语言层面上： new关键字 虚拟机：new指令-&amp;gt; 检查指令参数能否在常量池中定位到一个类的符号引用-&amp;gt;检查这个类的符号引用是否被加载、解析和初始化过（没有需要执行类记载）-&amp;gt;为新生对象分配新内存（对象的大小在类加载完成后可确认）-&amp;gt;设置对象头信息-&amp;gt;执行指令">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-              <!--  <img src="/博客#/images/logo.svg" alt="Object解析" height="28"> -->
+              <!--  <img src="/博客#/images/logo.svg" alt="Object in jvm" height="28"> -->
 		Luther
             
             </a>
@@ -147,10 +147,10 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-21T13:57:18.000Z">2019-08-21</time>
+                <time class="level-item has-text-grey" datetime="2019-12-02T08:52:18.000Z">2019-12-02</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java/">Java</a>
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
                 </div>
                 
                 
@@ -160,46 +160,46 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Object解析
+                Object in jvm
             
         </h1>
         <div class="content">
-            <p>所有类的超类都是<code>Object</code>，但是这种继承不是Java的显示继承方式<code>extends</code>,猜想应该是<code>c++</code>中的。<br>这个暂且不说，先来认识一下<code>Object</code>中的方法。</p>
-<a id="more"></a>
-
-<h2 id="registerNatives"><a href="#registerNatives" class="headerlink" title="registerNatives"></a>registerNatives</h2><blockquote>
-<p>在初始话Object类的时候，就会调用这个方法，应该是注册这个类。</p>
+            <h2 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h2><ul>
+<li>语言层面上： new关键字</li>
+<li>虚拟机：new指令-&gt; 检查指令参数能否在常量池中定位到一个类的符号引用-&gt;检查这个类的符号引用是否被加载、解析和初始化过（没有需要执行类记载）-&gt;为新生对象分配新内存（对象的大小在类加载完成后可确认）-&gt;设置对象头信息-&gt;执行<init>指令<a id="more"></a>
+<h2 id="对象的构成"><a href="#对象的构成" class="headerlink" title="对象的构成"></a>对象的构成</h2></init></li>
+<li>对象头（Header）</li>
+<li>实例数据（Instance Data）</li>
+<li>对齐填充（Pending）</li>
+</ul>
+<h3 id="对象头"><a href="#对象头" class="headerlink" title="对象头"></a>对象头</h3><blockquote>
+<p>分为两部分：  </p>
+<ul>
+<li>1）用于存储对象自身运行的数据，如hashCode，GC分代年龄、锁状态标志、线程持有的锁、偏向线程ID、偏向时间戳。官方成为MarkWord， MarkWord是非固定的数据结构，以便能够存储更多的数据。 </li>
+<li>2) 类型指针，对象指向它的类元数据的指针，虚拟机通过这个指针来确定这个对象是哪个类的实例。</li>
+</ul>
 </blockquote>
-<h2 id="Object构造器"><a href="#Object构造器" class="headerlink" title="Object构造器"></a>Object构造器</h2><blockquote>
-<p>会给一个空构造函数，这个是从java 1.0就已经有了。</p>
+<h3 id="实例数据"><a href="#实例数据" class="headerlink" title="实例数据"></a>实例数据</h3><ul>
+<li>对象真正存储的有效信息（代码中定义的各种类型字段内容）</li>
+<li>存储顺序受虚拟机分配策略参数和字段在Java源码上定义的顺序影响。</li>
+<li>分配策略：longs/doubles、ints、shorts/chars、bytes/booleans、oops， 相同宽度的字段总是分配到一起的。在满足这个条件下，父类定义的变量会在子类之前。如果CompactFields的值是true，子类较窄的变量可能会插入到父类的间隙中。<h3 id="对齐填充"><a href="#对齐填充" class="headerlink" title="对齐填充"></a>对齐填充</h3></li>
+<li>不是必然存在</li>
+<li>占位符作用，使得对象大小是8bit的整数倍。（HotSpot VM的自动内存管理系统要求对象起始地址必须是8bit的整数倍）</li>
+<li>当对象实例数据部分未对齐时，需要通过对齐填充来补全<h2 id="对象的访问定位"><a href="#对象的访问定位" class="headerlink" title="对象的访问定位"></a>对象的访问定位</h2><blockquote>
+<p>使用句柄和直接指针这两种方式访问对象</p>
 </blockquote>
-<h2 id="getClass"><a href="#getClass" class="headerlink" title="getClass"></a>getClass</h2><blockquote>
-<p>获取运行时当前对象的类对象</p>
+<h3 id="句柄访问"><a href="#句柄访问" class="headerlink" title="句柄访问"></a>句柄访问</h3></li>
+<li>Heap中会划分一部分内存来作为句柄池</li>
+<li>引用（Reference）中存储的时对象的句柄地址</li>
+<li>句柄包含对象实例数据的指针和对象类型数据的指针<blockquote>
+<p>优点：Reference存储的是稳定的句柄地址，对象被移动时只改变句柄中的实例数据指针就行了</p>
 </blockquote>
-<h2 id="hashCode"><a href="#hashCode" class="headerlink" title="hashCode"></a>hashCode</h2><blockquote>
-<p>计算对象的hash值，一般会被重写。是<code>equals</code>的伴侣，正常应用在两个对象的比较</p>
+<h3 id="直接指针访问"><a href="#直接指针访问" class="headerlink" title="直接指针访问"></a>直接指针访问</h3></li>
+<li>引用（Reference）中存储的是对象地址，对象实例数据中包含了对象类型数据的指针。<blockquote>
+<p>优点：速度更快，节省了一次指针定位时间开销。目前HotSpot使用第二种方式进行对象访问</p>
 </blockquote>
-<h2 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h2><blockquote>
-<p>判断当前对象是否与指定对象是否相等， 默认是比较是否是同一个引用， 一般满足不了我们的需求， 所以正常会重写它。</p>
-</blockquote>
-<h2 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h2><blockquote>
-<p>克隆当前对象，返回当前对象的克隆对象。但是只有继承了<code>Cloneable</code>接口的类才能使用该方法，否则会报<code>CloneNotSupportException</code>异常。注意：如果说对象的属性是其他对象的引用， 那么需要深度克隆。</p>
-</blockquote>
-<h2 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString"></a>toString</h2><blockquote>
-<p>将当前对象转成String， 默认返回 类名+地址值。这场会被我们重写，因为默认的方法正常没有用。</p>
-</blockquote>
-<h2 id="notify"><a href="#notify" class="headerlink" title="notify"></a>notify</h2><blockquote>
-<p>在锁争夺中唤醒一个等待该对象持有锁的其他对象， 让其对象进行锁争夺。注意当前线程必须是对象持有锁的线程，否则会报<code>IllegalMonitorStateException</code>。与之相同的还有<code>notifyAll</code>,它是唤醒所有等待中的对象。</p>
-</blockquote>
-<h2 id="notifyAll"><a href="#notifyAll" class="headerlink" title="notifyAll"></a>notifyAll</h2><blockquote>
-<p>在锁争夺中唤醒等待该对象持有锁的其他对象， 让对象进行锁争夺。注意当前线程必须是对象持有锁，否则会报<code>IllegalMonitorStateException</code>。与之相同的还有<code>notify</code>,它是唤醒所有等待中的对象。</p>
-</blockquote>
-<h2 id="wait"><a href="#wait" class="headerlink" title="wait"></a>wait</h2><blockquote>
-<p>当前线程等待，进入线程池等待，并且释放锁资源,等待<code>notify</code>唤醒。其实质调用的是它的重载方法 <code>wait(long timeoutMillis)</code>， 参数是 <code>0L</code></p>
-</blockquote>
-<h2 id="finalize"><a href="#finalize" class="headerlink" title="finalize"></a>finalize</h2><blockquote>
-<p>通知垃圾回收， 回收这个对象。但是什么时候回收是有GC自己控制的， 这个方法只是标识这个对象需要被回收了</p>
-</blockquote>
+</li>
+</ul>
 
         </div>
         
@@ -207,7 +207,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Java/">Java</a>
+                    <a class="has-link-grey -link" href="/tags/jvm/">jvm</a>
                 </div>
             </div>
         </div>
@@ -224,17 +224,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/interview-LX/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">面试历险记-乐信</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/springalibaba/">
-                <span class="level-item">SpringCloudAlibaba</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/jstat/">
+                <span class="level-item">jstat工具</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -670,7 +663,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                   <!-- <img src="/博客#/images/logo.svg" alt="Object解析" height="28"> -->
+                   <!-- <img src="/博客#/images/logo.svg" alt="Object in jvm" height="28"> -->
 			Luther
                 
                 </a>
