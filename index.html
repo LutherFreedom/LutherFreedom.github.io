@@ -146,6 +146,94 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-24T15:21:18.000Z">2019-12-24</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/Object alive/">Object alive</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>Heap堆中存放着Java中几乎所有的对象，垃圾回收前，如何确定对象已死，对象需要被回收？</p>
+</blockquote>
+<h2 id="引用计数算法"><a href="#引用计数算法" class="headerlink" title="引用计数算法"></a>引用计数算法</h2><blockquote>
+<p>给对象添加一个引用计数器，被引用了计数器+1，引用失效计数器-1.当计数器为0时，表示对象不能被使用，已经死亡了。但是这个方法不能解决对象循环引用。</p>
+</blockquote>
+<h2 id="可达性算法"><a href="#可达性算法" class="headerlink" title="可达性算法"></a>可达性算法</h2><blockquote>
+<p>通过一组<code>GC ROOT</code>对象作为起点，从节点向下搜索，当一个对象到GCROOT之间没有任何引用链时，对象不可用，对象已死亡。<br>引用链：GCROOT向下搜索所走过的路径</p>
+</blockquote>
+<h3 id="可作为GCROOT的对象"><a href="#可作为GCROOT的对象" class="headerlink" title="可作为GCROOT的对象"></a>可作为GCROOT的对象</h3><ul>
+<li>虚拟机栈中的引用对象</li>
+<li>方法区中静态属性引用的对象</li>
+<li>方法区中常量引用的对象</li>
+<li>本地方法栈中的JNI引用的对象<h3 id="不可达对象是否一定会被回收？"><a href="#不可达对象是否一定会被回收？" class="headerlink" title="不可达对象是否一定会被回收？"></a>不可达对象是否一定会被回收？</h3><blockquote>
+<p>答案是否定的，因为一个对象对象被回收，会有两个标记过程，第一个标记过程即是可达性分析时的一次标记;对这些对象进行一次筛选，筛选条件是是否有必要执行<code>finalize</code>方法,如果对象未覆盖<code>finalize</code>或者对象的<code>finalize</code>已经被执行过的，虚拟机将不再执行<code>finalize</code>;将筛选通过的对象放置在<code>F-Queue</code>中，有虚拟机创建低等级<code>finalize</code>线程触发<code>finalize()</code>,在这个时候如果对象与引用链有联系上了，那么该对象不会被回收。<br>一个对象只会调用一次<code>finalize（）</code><br><code>finalize</code>线程触发<code>finalize()</code>，但是虚拟机不会等待其执行完成。原因，如果阻塞的话，当某个对象的回收出现问题，将会引用全局的回收。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="谈引用"><a href="#谈引用" class="headerlink" title="谈引用"></a>谈引用</h2><h3 id="强引用"><a href="#强引用" class="headerlink" title="强引用"></a>强引用</h3><blockquote>
+<p>对象普通的创建方式就是强引用</p>
+</blockquote>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object obj = <span class="hljs-keyword">new</span> Object();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>回收：只要引用存在，就不会回收</p>
+</blockquote>
+<h3 id="软引用"><a href="#软引用" class="headerlink" title="软引用"></a>软引用</h3><blockquote>
+<p>SoftReference方式创建</p>
+</blockquote>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String a = <span class="hljs-string">"This is Demo"</span>;</span><br><span class="line">SoftReference&lt;String&gt; soft = <span class="hljs-keyword">new</span> SoftReference&lt;&gt;(a);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>回收：当内存溢出异常之前，回收软引用对象，如果回收之后依旧内存溢出，就会跑出OutOfMemory</p>
+</blockquote>
+<h3 id="弱引用"><a href="#弱引用" class="headerlink" title="弱引用"></a>弱引用</h3><blockquote>
+<p>WeakReference 创建</p>
+</blockquote>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String a = <span class="hljs-string">"This is Demo"</span>;</span><br><span class="line">WeakReference&lt;String&gt; soft = <span class="hljs-keyword">new</span> WeakReference&lt;&gt;(a);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>回收：只要有垃圾收集，这类对象一定被回收</p>
+</blockquote>
+<h3 id="虚引用"><a href="#虚引用" class="headerlink" title="虚引用"></a>虚引用</h3><blockquote>
+<p>WeakReference 创建</p>
+</blockquote>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String a = <span class="hljs-string">"This is Demo"</span>;</span><br><span class="line">PhantomReference&lt;String&gt; soft = <span class="hljs-keyword">new</span> PhantomReference&lt;&gt;(a);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这个引用没有任何的影响。唯一目的是能在这个对象被收集器回收时收到一个系统通知</p>
+</blockquote>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-12-02T08:52:18.000Z">2019-12-02</time>
                 
                 <div class="level-item">
@@ -601,7 +689,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        10
                     </p>
                 </div>
             </div>
@@ -685,6 +773,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-24T15:21:18.000Z">2019-12-24</time></div>
+                    <a href="/Object alive/" class="has-link-black-ter is-size-6">Object alive</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T08:52:18.000Z">2019-12-02</time></div>
                     <a href="/Object/" class="has-link-black-ter is-size-6">Object in jvm</a>
                     <p class="is-size-7 is-uppercase">
@@ -733,19 +834,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-21T13:57:18.000Z">2019-08-21</time></div>
-                    <a href="/interview-LX/" class="has-link-black-ter is-size-6">面试历险记-乐信</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Interview/">Interview</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -756,7 +844,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/AMQP/" style="font-size: 10px;">AMQP</a> <a href="/tags/Alibaba/" style="font-size: 10px;">Alibaba</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/JVM/" style="font-size: 20px;">JVM</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringCloudStream-rabbit/" style="font-size: 10px;">SpringCloudStream rabbit</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/诗/" style="font-size: 10px;">诗</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+        <a href="/tags/AMQP/" style="font-size: 10px;">AMQP</a> <a href="/tags/Alibaba/" style="font-size: 10px;">Alibaba</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/JVM/" style="font-size: 20px;">JVM</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringCloudStream-rabbit/" style="font-size: 10px;">SpringCloudStream rabbit</a> <a href="/tags/jvm/" style="font-size: 20px;">jvm</a> <a href="/tags/诗/" style="font-size: 10px;">诗</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
 </div>
 
@@ -775,7 +863,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -840,6 +928,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-24T15:21:18.000Z">2019-12-24</time></div>
+                    <a href="/Object alive/" class="has-link-black-ter is-size-6">Object alive</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T08:52:18.000Z">2019-12-02</time></div>
                     <a href="/Object/" class="has-link-black-ter is-size-6">Object in jvm</a>
                     <p class="is-size-7 is-uppercase">
@@ -888,19 +989,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-21T13:57:18.000Z">2019-08-21</time></div>
-                    <a href="/interview-LX/" class="has-link-black-ter is-size-6">面试历险记-乐信</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Interview/">Interview</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -911,7 +999,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/AMQP/" style="font-size: 10px;">AMQP</a> <a href="/tags/Alibaba/" style="font-size: 10px;">Alibaba</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/JVM/" style="font-size: 20px;">JVM</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringCloudStream-rabbit/" style="font-size: 10px;">SpringCloudStream rabbit</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/诗/" style="font-size: 10px;">诗</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+        <a href="/tags/AMQP/" style="font-size: 10px;">AMQP</a> <a href="/tags/Alibaba/" style="font-size: 10px;">Alibaba</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/JVM/" style="font-size: 20px;">JVM</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringCloudStream-rabbit/" style="font-size: 10px;">SpringCloudStream rabbit</a> <a href="/tags/jvm/" style="font-size: 20px;">jvm</a> <a href="/tags/诗/" style="font-size: 10px;">诗</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
 </div>
 
@@ -930,7 +1018,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
